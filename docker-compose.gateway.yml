@@ -1,0 +1,31 @@
+services:
+  screenshot-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+      args:
+        APP_REVISION: ${APP_REVISION:-local}
+    ports:
+      - "3001:3001"
+    environment:
+      SCREENSHOT_SERVER_KEY: ${SCREENSHOT_SERVER_KEY:?Set the same signing key used by Revolution}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      RENDER_SLOTS: ${RENDER_SLOTS:-2}
+      RENDER_PENDING: ${RENDER_PENDING:-8}
+      RESULTS_BUCKET: ${RESULTS_BUCKET:-}
+      AWS_REGION: ${AWS_REGION:-eu-west-1}
+      TRUSTED_RENDER_HOSTS: ${TRUSTED_RENDER_HOSTS:-}
+      HOST_RESOLVER_RULES: ${HOST_RESOLVER_RULES:-}
+      APPSIGNAL_API_KEY: ${APPSIGNAL_API_KEY:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    shm_size: 256mb
+    stop_grace_period: 30s
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'

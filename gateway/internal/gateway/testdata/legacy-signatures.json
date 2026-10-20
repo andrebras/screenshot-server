@@ -1,0 +1,14 @@
+[
+  {
+    "src": "https://example.com/a?text=~* % café 🚀",
+    "query": "src=https%3A%2F%2Fexample.com%2Fa%3Ftext%3D%7E*+%25+caf%C3%A9+%F0%9F%9A%80&ts=123&gId=42&s=0cf5157b042682c6dd45ff80e93238d2651a1a72f487a6b6fd01ebb6e38eeed3"
+  },
+  {
+    "src": "https://example.com/a?x=a+b&y=a b",
+    "query": "src=https%3A%2F%2Fexample.com%2Fa%3Fx%3Da%2Bb%26y%3Da+b&viewportWidth=600&viewportHeight=840&s=863e6b78a4d9f472d0d802345e30d3ff266df96f94fb13abd4f0bb96bc0c225b"
+  },
+  {
+    "src": "https://example.com/%2F?a=%26",
+    "query": "src=https%3A%2F%2Fexample.com%2F%252F%3Fa%3D%2526&x=0&y=0&width=1200&height=1600&s=6270cdf249175955ebab451fed382a4ce43d0bd1ba7bd5ceb21aaaec823694b5"
+  }
+]

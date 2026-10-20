@@ -1,0 +1,20 @@
+defaults: &defaults
+  port: 3001
+  internal_ranges: []
+  allowed_internal_hosts: []
+  blocked_hosts: []
+
+development:
+  <<: *defaults
+production:
+  <<: *defaults
+test:
+  <<: *defaults
+  port: 3002
+  internal_ranges:
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+  allowed_internal_hosts:
+    - 127.0.0.1
+  blocked_hosts:
+    - '*.blocked.example'

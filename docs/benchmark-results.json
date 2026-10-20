@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "platform": "linux",
+    "arch": "arm64",
+    "node": "v22.11.0",
+    "cpus": "2",
+    "memory": "2GiB",
+    "storage": "S3-compatible object storage"
+  },
+  "visual_bytes_equal": true,
+  "legacy_fresh": {
+    "samples": 7,
+    "median_ms": 634.2,
+    "p95_ms": 735.5
+  },
+  "gateway_fresh": {
+    "samples": 7,
+    "median_ms": 392.2,
+    "p95_ms": 433.3
+  },
+  "gateway_duplicate_burst": {
+    "samples": 24,
+    "median_ms": 387.1,
+    "p95_ms": 390.2,
+    "requests": 24,
+    "page_navigations": 1
+  },
+  "gateway_stored": {
+    "samples": 20,
+    "median_ms": 1.4,
+    "p95_ms": 4.5,
+    "page_navigations": 0
+  },
+  "gateway_unique_burst": {
+    "requests": 16,
+    "completed": 4,
+    "rejected": 12,
+    "rejection_latency": {
+      "samples": 12,
+      "median_ms": 2.2,
+      "p95_ms": 3.3
+    }
+  },
+  "gateway_metrics": "screenshot_gateway_requests_total 68\nscreenshot_cache_hits_total 20\nscreenshot_render_jobs_total 13\nscreenshot_cache_errors_total 0\nscreenshot_overload_total 12\nscreenshot_render_slots_active 0\nscreenshot_jobs_admitted 0\nscreenshot_http_active 0\n"
+}
